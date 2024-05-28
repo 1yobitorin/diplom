@@ -1,0 +1,708 @@
+/* Устанавливаем базовый стиль для body и html */
+body, html {
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    height: 100%; /* Задаем высоту на 100% */
+    font-family: Arial, sans-serif; /* Задаем шрифт */
+}
+
+/* Стили для навигационной панели */
+.navbar {
+    background-color: #f2f2f2; /* Задаем цвет фона */
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Выравниваем элементы по горизонтали */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    height: 90px; /* Задаем высоту навигационной панели */
+}
+
+/* Стили для кнопок навигационной панели */
+.nav-button {
+    color: #475073; /* Цвет текста */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 14px 16px; /* Отступы внутри кнопки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-size: 17px; /* Размер шрифта */
+    font-weight: 750; /* Насыщенность шрифта */
+    position: relative; /* Позиционируем относительно родителя */
+    transition: color 0.3s; /* Анимация изменения цвета */
+}
+
+/* Элементы-псевдоэлементы для анимации у кнопок навигационной панели */
+.nav-button::after {
+    content: ''; /* Добавляем контент */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 0; /* Начальная ширина */
+    height: 2px; /* Высота */
+    display: block; /* Отображаем как блок */
+    margin-top: 5px; /* Отступ сверху */
+    right: 0; /* Сдвигаем вправо */
+    background: #274044; /* Цвет линии */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Анимация изменения ширины и цвета */
+}
+
+/* Анимация при наведении на кнопку */
+.nav-button:hover::after {
+    width: 100%; /* Раздвигаем линию на всю ширину кнопки */
+    left: 0; /* Располагаем слева */
+    background: black; /* Изменяем цвет на черный */
+}
+
+/* Стили для кнопки консультации */
+.navbar .consultation {
+    margin-left: auto; /* Закрепляем кнопку "consultation" справа */
+    margin-right: 30px; /* Добавляем отступ справа */
+    padding: 5px; /* Внутренние отступы */
+    border-radius: 5px; /* Задаем радиус скругления углов */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: #000; /* Цвет текста */
+}
+
+/* Дополнительные стили для кнопки консультации */
+.navbar .consultation {
+    vertical-align: middle; /* Выравниваем по вертикали */
+    transition: transform 0.3s ease; /* Анимация при изменении transform */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+/* Анимация при наведении на кнопку консультации */
+.navbar .consultation:hover {
+    transform: rotate(15deg) scale(1.1); /* Поворот и увеличение размера */
+}
+
+/* Стили для контентной области */
+.content {
+    background-image: url('background.png'); /* Устанавливаем фоновое изображение */
+    background-size: cover; /* Масштабируем изображение по размеру блока */
+    background-position: center; /* Выравниваем по центру */
+    height: calc(100% - 90px); /* Высота контентной области: 100% высоты экрана минус высота навигационной панели */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Выравниваем по горизонтали */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+/* Стили для текстового блока */
+.text-box {
+    background-color: #eaeaea; /* Цвет фона */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 15px; /* Радиус скругления углов */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для заголовков в текстовом блоке */
+.text-box h2 {
+    font-size: 35px; /* Размер шрифта */
+    color: #475073; /* Цвет текста */
+}
+
+/* Стили для параграфов в текстовом блоке */
+.text-box p {
+    font-size: 25px; /* Размер шрифта */
+    color: #475073; /* Цвет текста */
+}
+
+/* Дополнительные стили для заголовка h1 в текстовом блоке */
+.text-box h1 {
+    font-size: 40px; /* Размер шрифта */
+    color: #475073; /* Цвет текста */
+}
+
+/* Стили для изображений в навигационной панели */
+.navbar img {
+    width: 5%; /* Ширина изображения */
+    margin-left: 30px; /* Отступ слева */
+    margin-right: 30px; /* Отступ справа */
+}
+
+/* Стили для контентной области "О нас" */
+.content-about {
+    display: flex; /* Используем flexbox */
+    flex-direction: row; /* Располагаем в строку */
+    background-color: #2a2a2a; /* Цвет фона */
+    position: relative; /* Позиционируем */
+}
+
+/* Создание линии после блока ".content-about" */
+.content-about + .content-about::after {
+    content: ""; /* Добавляем контент */
+    position: absolute; /* Абсолютное позиционирование */
+    width: calc(100% - 40px); /* Ширина линии, учитывая внутренние отступы */
+    height: 3px; /* Высота линии */
+    left: 20px; /* Располагаем слева с отступом */
+    background-color: #72bfed; /* Цвет линии */
+}
+
+/* Стили для левой части контентной области "О нас" */
+.left-content {
+    flex: 1; /* Растягиваем на всю доступную ширину */
+    padding: 20px; /* Внутренние отступы */
+    color: white; /* Цвет текста */
+}
+
+/* Стили для заголовков в левой части контентной области "О нас" */
+.left-content h2 {
+    color: #3498db; /* Цвет текста */
+}
+
+/* Дополнительные стили для заголовка h1 в левой части контентной области "О нас" */
+.left-content h1 {
+    position: relative; /* Относительное позиционирование */
+    margin-top: 0; /* Убираем отступ сверху */
+}
+
+/* Псевдоэлемент для создания линии под заголовком h1 в левой части контентной области "О нас" */
+.left-content h1::after {
+    content: ''; /* Добавляем контент */
+    display: block; /* Отображаем как блок */
+    width: 50px; /* Ширина линии */
+    height: 3px; /* Высота линии */
+    background-color: #72bfed; /* Цвет линии */
+    margin-top: 10px; /* Отступ сверху */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Располагаем относительно нижней границы заголовка h1 */
+}
+
+/* Выравнивание текста вправо */
+.right-about {
+    text-align: right; /* Выравниваем текст по правому краю */
+}
+
+/* Псевдоэлемент для создания линии справа от заголовка h1 */
+.right-about-content h1::after {
+    right: 0; /* Располагаем справа */
+}
+
+/* Стили для блока */
+.box {
+    position: relative; /* Относительное позиционирование */
+    background-color: #2c2944; /* Цвет фона */
+    padding: 20px; /* Внутренние отступы */
+    margin: 10px 0; /* Внешние отступы сверху и снизу, ноль справа и слева */
+    border-radius: 5px; /* Радиус скругления углов */
+}
+
+/* Псевдоэлемент для создания левой вертикальной линии у блока */
+.box::before {
+    content: ''; /* Добавляем контент */
+    position: absolute; /* Абсолютное позиционирование */
+    left: -10px; /* Располагаем слева */
+    top: 0; /* Располагаем сверху */
+    bottom: 0; /* Располагаем снизу */
+    width: 5px; /* Ширина линии */
+    background-color: #72bfed; /* Цвет линии */
+    border-top-left-radius: 5px; /* Радиус скругления верхнего левого угла */
+    border-bottom-left-radius: 5px; /* Радиус скругления нижнего левого угла */
+}
+
+/* Стили для правой части контентной области */
+.right-content {
+    display: flex; /* Используем flexbox */
+    flex: 1; /* Растягиваем на всю доступную ширину */
+    padding: 20px; /* Внутренние отступы */
+}
+
+/* Стили для изображений в правой части контентной области */
+.right-content img {
+    width: 100%; /* Ширина изображения на 100% ширины родителя */
+    height: auto; /* Автоматическая высота */
+    border-radius: 5px; /* Радиус скругления углов */
+    box-shadow: 0px 10px 10px #2c2944; /* Тень */
+}
+
+
+/* Стили для подвала */
+.footer {
+    background-color: #2a2a2a; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 40px 20px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для заголовков в подвале */
+.footer h2 {
+    color: #3498db; /* Цвет текста */
+    margin-bottom: 20px; /* Внешний отступ снизу */
+}
+
+/* Стили для содержимого подвала */
+.footer .footer-content {
+    display: flex; /* Используем flexbox */
+    justify-content: center; /* Выравниваем по центру по горизонтали */
+    align-items: center; /* Выравниваем по центру по вертикали */
+}
+
+/* Стили для контактной информации в подвале */
+.footer .footer-content .contact-info {
+    margin: 0 20px; /* Внешние отступы слева и справа */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для иконок контактной информации в подвале */
+.footer .footer-content .contact-info i {
+    font-size: 36px; /* Размер шрифта */
+    margin-bottom: 10px; /* Внешний отступ снизу */
+    color: #3498db; /* Цвет иконки */
+}
+
+/* Стили для текста контактной информации в подвале */
+.footer .footer-content .contact-info p {
+    margin: 0; /* Убираем внешние отступы */
+}
+
+/* Стили для разделителя в подвале */
+.footer .footer-content .divider {
+    height: 50px; /* Высота */
+    width: 1px; /* Ширина */
+    background-color: #3498db; /* Цвет */
+    margin: 0 20px; /* Внешние отступы слева и справа */
+}
+
+/* Стили для социальных иконок в подвале */
+.footer .social-icons {
+    margin-top: 20px; /* Внешний отступ сверху */
+}
+
+/* Стили для ссылок социальных иконок в подвале */
+.footer .social-icons a {
+    margin: 0 10px; /* Внешние отступы слева и справа */
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-size: 24px; /* Размер шрифта */
+    transition: color 0.3s; /* Анимация изменения цвета */
+}
+
+/* Анимация при наведении на социальные иконки в подвале */
+.footer .social-icons a:hover {
+    color: #3498db; /* Изменяем цвет текста при наведении */
+}
+
+/* Стили для фонового блока в портфолио */
+.background-portfolio {
+    display: flex; /* Используем flexbox */
+    background-color: #2a2a2a; /* Цвет фона */
+}
+
+/* Стили для профиля в портфолио */
+.profile-portfolio {
+    margin-top: 20px; /* Внешний отступ сверху */
+    margin-left: 40px; /* Внешний отступ слева */
+    display: flex; /* Используем flexbox */
+    flex-direction: row; /* Располагаем в строку */
+    background-color: #2a2a2a; /* Цвет фона */
+    position: relative; /* Позиционируем */
+}
+
+/* Стили для изображения профиля в портфолио */
+.profile-portfolio-image img {
+    border-radius: 50%; /* Радиус скругления углов */
+    width: 150px; /* Ширина */
+    height: 150px; /* Высота */
+    object-fit: cover; /* Заполняем контейнер */
+}
+
+/* Стили для текста профиля в портфолио */
+.profile-porfolio-text {
+    color: white; /* Цвет текста */
+    margin-left: 5%; /* Внешний отступ слева */
+}
+
+/* Стили для контентной области в портфолио */
+.content-portfolio {
+    display: block; /* Отображаем как блок */
+}
+
+/* Стили для фильтра */
+.filter {
+    margin-top: 30px; /* Внешний отступ сверху */
+    max-width: 400px; /* Максимальная ширина */
+}
+
+/* Стили для списка фильтра */
+#filter {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Стили для элементов списка фильтра */
+#filter li {
+    display: block; /* Отображаем как блок */
+    margin-left: 40px; /* Внешний отступ слева */
+    margin-top: 20px; /* Внешний отступ сверху */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    border-radius: 5px; /* Радиус скругления углов */
+    color: white; /* Цвет текста */
+    font-size: 20px; /* Размер шрифта */
+}
+
+/* Анимация при наведении на элемент списка фильтра */
+#filter li:hover {
+    color: #3498db; /* Изменяем цвет текста при наведении */
+}
+
+/* Стили для списка портфолио */
+.list-portfolio {
+    display: grid; /* Используем grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Три колонки равной ширины */
+    gap: 10px; /* Промежуток между элементами */
+    margin-right: 5%; /* Внешний отступ справа */
+    margin-bottom: 5%; /* Внешний отступ снизу */
+}
+
+/* Стили для элементов портфолио */
+.element-portfolio {
+    padding: 15px; /* Внутренние отступы */
+    margin-top: 20px; /* Внешний отступ сверху */
+    margin-left: 75px; /* Внешний отступ слева */
+    max-width: 330px; /* Максимальная ширина */
+    min-height: 500px; /* Минимальная высота */
+    max-height: 800px; /* Максимальная высота */
+    background-color: #f2f2f2; /* Цвет фона */
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стили для изображений в элементах портфолио */
+.element-portfolio img {
+    display: block; /* Отображаем как блок */
+    margin: 0 auto; /* Выравниваем по центру по горизонтали */
+    cursor: pointer; /* Изменяем курсор */
+    width: 75%; /* Ширина изображения */
+    height: 40%; /* Высота изображения */
+    transition: transform 0.2s ease; /* Анимация изменения масштаба */
+}
+
+/* Стили для заголовков в элементах портфолио */
+.element-portfolio h3 {
+    margin-top: 30px; /* Внешний отступ сверху */
+    text-align: center; /* Выравнивание текста по центру */
+    min-height: 70px; /* Минимальная высота */
+}
+
+/* Стили для текстового содержимого в элементах портфолио */
+.element-portfolio p {
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+/* Стили для модального окна */
+.lightbox {
+    display: none; /* Не отображаем по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Располагаем вверху */
+    left: 0; /* Располагаем слева */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона с прозрачностью */
+    z-index: 9999; /* Индекс слоя */
+}
+
+/* Стили для изображения в модальном окне */
+.lightbox img {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Располагаем в середине по вертикали */
+    left: 50%; /* Располагаем в середине по горизонтали */
+    transform: translate(-50%, -50%); /* Сдвигаем на половину размеров изображения */
+    max-width: 90%; /* Максимальная ширина на 90% */
+    max-height: 90%; /* Максимальная высота на 90% */
+}
+
+    /* Стили модального окна */
+.appointment-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.appointment-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.close-appointment-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.appointment-modal-body {
+  margin-bottom: 20px;
+}
+
+.appointment-modal-body label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 750;
+}
+
+.appointment-modal-body select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.appointment-modal-footer {
+  text-align: right;
+}
+
+.appointment-modal-footer button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.appointment-modal-footer button:hover {
+  background-color: #45a049;
+}
+
+.close-appointment-modal:hover,
+.close-appointment-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Стили для заголовка модального окна записи */
+.appointment-modal-header {
+    margin-bottom: 10px; /* Внешний отступ снизу */
+  }
+  
+  /* Стили для заголовка h2 в модальном окне записи */
+  .appointment-modal-header h2 {
+    margin: 0; /* Убираем внешние отступы */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: 750; /* Начертание */
+  }
+  
+  /* Стили для тела модального окна записи */
+  .appointment-modal-body {
+    margin-bottom: 20px; /* Внешний отступ снизу */
+  }
+  
+  /* Стили для меток в теле модального окна записи */
+  .appointment-modal-body label {
+    display: block; /* Отображаем как блок */
+    margin-bottom: 5px; /* Внешний отступ снизу */
+    font-weight: 750; /* Начертание */
+  }
+  
+  /* Стили для выпадающего списка в теле модального окна записи */
+  .appointment-modal-body select {
+    width: 100%; /* Ширина на 100% */
+    padding: 5px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 4px; /* Радиус скругления углов */
+    box-sizing: border-box; /* Учитываем границы в общую ширину */
+    font-size: 20px; /* Размер шрифта */
+  }
+  
+  /* Стили для подвала модального окна записи */
+  .appointment-modal-footer {
+    text-align: right; /* Выравнивание текста по правому краю */
+  }
+  
+  /* Стили для кнопок в подвале модального окна записи */
+  .appointment-modal-footer button {
+    padding: 8px 12px; /* Внутренние отступы */
+    background-color: #4CAF50; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 4px; /* Радиус скругления углов */
+    cursor: pointer; /* Изменяем курсор */
+  }
+  
+  /* Анимация при наведении на кнопки в подвале модального окна записи */
+  .appointment-modal-footer button:hover {
+    background-color: #45a049; /* Изменяем цвет фона при наведении */
+  }
+  
+/* Стили для модального окна записи */
+.appointment-modal {
+    display: none; /* По умолчанию модальное окно скрыто */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 1000; /* Индекс слоя */
+    left: 0; /* Располагаем в левом верхнем углу */
+    top: 0; /* Располагаем в левом верхнем углу */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    overflow: auto; /* Включаем прокрутку при необходимости */
+  }
+  
+  /* Стили для содержимого модального окна записи */
+  .appointment-modal-content {
+    background-color: #fff; /* Цвет фона */
+    margin: 10% auto; /* Отступ сверху и снизу, чтобы модальное окно было по центру */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 10px; /* Радиус скругления углов */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Тень */
+    width: 80%; /* Ширина модального окна */
+    max-width: 600px; /* Максимальная ширина модального окна */
+  }
+  
+  /* Стили для заголовка модального окна записи */
+  .appointment-modal-header {
+    display: flex; /* Используем flexbox */
+    justify-content: space-between; /* Располагаем элементы в пространстве между ними */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    border-bottom: 1px solid #ccc; /* Граница снизу */
+    padding-bottom: 10px; /* Внутренний отступ снизу */
+    margin-bottom: 10px; /* Внешний отступ снизу */
+  }
+  
+  /* Стили для заголовка h2 в модальном окне записи */
+  .appointment-modal-header h2 {
+    margin: 0; /* Убираем внешние отступы */
+  }
+  
+  /* Стили для кнопки закрытия модального окна записи */
+  .close-appointment-modal {
+    cursor: pointer; /* Изменяем курсор */
+    font-size: 24px; /* Размер шрифта */
+    color: #777; /* Цвет текста */
+  }
+  
+  /* Анимация при наведении на кнопку закрытия модального окна записи */
+  .close-appointment-modal:hover {
+    color: #333; /* Изменяем цвет текста при наведении */
+  }
+  
+  /* Стили для тела модального окна записи */
+  .appointment-modal-body {
+    margin-bottom: 20px; /* Внешний отступ снизу */
+  }
+  
+  /* Стили для групп форм в теле модального окна записи */
+  .form-group {
+    margin-bottom: 15px; /* Внешний отступ снизу */
+  }
+  
+  /* Стили для меток в группах форм в теле модального окна записи */
+  .form-group label {
+    display: block; /* Отображаем как блок */
+    margin-bottom: 5px; /* Внешний отступ снизу */
+    font-weight: bold; /* Начертание */
+  }
+  
+  /* Стили для полей ввода в группах форм в теле модального окна записи */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select {
+    width: 100%; /* Ширина на 100% */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Радиус скругления углов */
+    font-size: 13px; /* Размер шрифта */
+    box-sizing: border-box; /* Учитываем границы в общую ширину */
+  }
+  
+  /* Стили для подвала модального окна записи */
+  .appointment-modal-footer {
+    text-align: right; /* Выравнивание текста по правому краю */
+  }
+  
+  /* Стили для кнопок в подвале модального окна записи */
+  .btn {
+    padding: 10px 20px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Радиус скругления углов */
+    cursor: pointer; /* Изменяем курсор */
+    font-weight: bold; /* Начертание */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  }
+  
+  /* Стили для основной кнопки в подвале модального окна записи */
+  .btn-primary {
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+  }
+  
+  /* Анимация при наведении на основную кнопку в подвале модального окна записи */
+  .btn-primary:hover {
+    background-color: #0056b3; /* Изменяем цвет фона при наведении */
+  }
+  
+/* Стили для модального окна "successModal" */
+#successModal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 1; /* Индекс слоя */
+    left: 0; /* Располагаем в левом верхнем углу */
+    top: 0; /* Располагаем в левом верхнем углу */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    overflow: auto; /* Включить прокрутку, если необходимо */
+    background-color: rgb(0,0,0); /* Цвет фона */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+  }
+  
+  /* Стили для модального окна "existingRecordModal" */
+  #existingRecordModal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 1; /* Индекс слоя */
+    left: 0; /* Располагаем в левом верхнем углу */
+    top: 0; /* Располагаем в левом верхнем углу */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    overflow: auto; /* Включить прокрутку, если необходимо */
+    background-color: rgb(0,0,0); /* Цвет фона */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+  }
+  
+  /* Стили для содержимого модального окна */
+  #modalContent {
+    background-color: #fefefe; /* Цвет фона */
+    margin: 15% auto; /* 15% сверху и по центру */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #888; /* Граница */
+    width: 80%; /* Ширина */
+  }
+  
+  /* Стили для кнопки отмены */
+  #cancelButton {
+    background-color: #f44336; /* Красный цвет фона */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы */
+    border: none; /* Без границы */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    font-size: 16px; /* Размер шрифта */
+    margin-top: 20px; /* Отступ сверху */
+  }
+  
+  /* Анимация при наведении на кнопку отмены */
+  #cancelButton:hover {
+    background-color: #d32f2f; /* Темный красный при наведении */
+  }
+  
+  /* Стили для кнопки закрытия модального окна */
+  .close {
+    color: #aaa; /* Цвет текста */
+    float: right; /* Выравниваем по правому краю */
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Начертание */
+  }
+  
+  /* Анимация при наведении на кнопку закрытия модального окна */
+  .close:hover, .close:focus {
+    color: black; /* Цвет текста при наведении */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Указатель при наведении */
+  }
+  
